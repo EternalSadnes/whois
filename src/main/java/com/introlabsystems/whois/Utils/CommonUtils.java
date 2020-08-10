@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommonUtils {
 
-    public static void sleep(int mils){
+    public static void sleep(int mils) {
         try {
             Thread.sleep(mils);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

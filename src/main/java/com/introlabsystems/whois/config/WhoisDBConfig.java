@@ -1,10 +1,7 @@
 package com.introlabsystems.whois.config;
 
-import com.introlabsystems.whois.config.props.AssessmentTaskDataSourceCfg;
 import com.introlabsystems.whois.config.props.WhoisDataSourceCfg;
-import com.introlabsystems.whois.model.assessment.AssessmentDomain;
 import com.introlabsystems.whois.model.whois.RegistrantInfo;
-import com.introlabsystems.whois.repository.assessment.AssessmentDomainRepository;
 import com.introlabsystems.whois.repository.whois.RegistrantInfoRepository;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -12,8 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -55,7 +50,7 @@ public class WhoisDBConfig {
     @Bean(name = "whoisEM")
     public LocalContainerEntityManagerFactoryBean whoisEntityManagerFactory(
             EntityManagerFactoryBuilder builder,
-            @Qualifier("whoisDataSource")DataSource dataSource,
+            @Qualifier("whoisDataSource") DataSource dataSource,
             WhoisDataSourceCfg config) {
 
         return builder.dataSource(dataSource)
@@ -67,7 +62,7 @@ public class WhoisDBConfig {
 
     @Bean(name = "whoisTM")
     public PlatformTransactionManager whoisTransactionManager(
-            @Qualifier("whoisEM")EntityManagerFactory entityManagerFactory) {
+            @Qualifier("whoisEM") EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
     }
 }

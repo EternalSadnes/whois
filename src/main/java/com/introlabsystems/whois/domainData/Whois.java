@@ -44,7 +44,7 @@ public class Whois {
 
     private String queryWithWhoisServer(String domainName, String whoisServer) {
         String result = "";
-        Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("5.189.151.227",24056));
+        Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("5.189.151.227", 24056));
         WhoisClient whois = new WhoisClient();
         whois.setProxy(proxy);
         whois.setDefaultTimeout(5000);

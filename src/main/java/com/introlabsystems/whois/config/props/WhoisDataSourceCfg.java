@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "datasource.whois")
-public class WhoisDataSourceCfg extends DataSourceCfg{
+public class WhoisDataSourceCfg extends DataSourceCfg {
 }

@@ -22,10 +22,10 @@ public class DomainDataParser {
         return registrantInfoDTO;
     }
 
-    private String parseDomainName(String response,String lineStart) {
+    private String parseDomainName(String response, String lineStart) {
         String[] lines = response.split("\n");
         for (String line : lines) {
-            if (StringUtils.startsWithIgnoreCase(line,lineStart))
+            if (StringUtils.startsWithIgnoreCase(line, lineStart))
                 return StringUtils.substringAfter(line, lineStart).trim();
         }
         return null;
