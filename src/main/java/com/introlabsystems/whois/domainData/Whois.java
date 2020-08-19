@@ -72,7 +72,7 @@ public class Whois {
             }
             CommonUtils.sleep(1000);
             flag = true;
-            System.out.println("HUETA");
+            System.out.println("Hello there :)");
         }
         return result;
     }
